@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gimnospermas</title>
+    <title>GimnoEduca | Guia Absoluto e Responsivo</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
     
     <style>
@@ -20,13 +22,30 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Open Sans', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; }
-
-        header {
-            height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover; border-bottom: 4px solid var(--primary-green); position: relative; overflow: hidden;
+        body { 
+            font-family: 'Open Sans', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            line-height: 1.7; 
+            overflow-x: hidden;
         }
+
+        /* --- CABEÇALHO --- */
+        header {
+            height: 50vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover; 
+            background-position: center;
+            border-bottom: 4px solid var(--primary-green); 
+            position: relative; 
+            overflow: hidden;
+        }
+
+        header h1 { font-family: 'Montserrat', sans-serif; font-size: 3.5rem; color: white; text-transform: uppercase; }
 
         .wind-container { position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none; }
         .pollen { width: 4px; height: 4px; background: var(--accent-gold); border-radius: 50%; position: absolute; opacity: 0; animation: fly 6s infinite linear; }
@@ -36,52 +55,95 @@
 
         section { margin-bottom: 7rem; }
         h2 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; color: white; margin-bottom: 2rem; border-left: 8px solid var(--primary-green); padding-left: 15px; }
+        h3 { font-family: 'Montserrat', sans-serif; margin-bottom: 1rem; }
 
-        /* VISÃO GERAL */
-        .vision-box { background: var(--card-bg); padding: 2.5rem; border-radius: 20px; margin-bottom: 4rem; border: 1px solid rgba(76,175,80,0.3); }
-        .vision-box p { margin-bottom: 1rem; font-size: 1.1rem; }
+        /* --- 1. VISÃO GERAL --- */
+        .vision-box { background: var(--card-bg); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(76,175,80,0.3); }
 
-        /* CARACTERÍSTICAS */
+        /* --- 2. CARACTERÍSTICAS --- */
         .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .feature-card { background: var(--card-bg); padding: 2rem; border-radius: 15px; border-bottom: 4px solid var(--primary-green); transition: 0.3s; }
-        .feature-card:hover { transform: translateY(-10px); background: #1c221c; }
+        .feature-card { background: var(--card-bg); padding: 2rem; border-radius: 15px; border-bottom: 4px solid var(--primary-green); transition: var(--transition); }
+        .feature-card:hover { transform: translateY(-10px); }
         .feature-card i { color: var(--accent-gold); font-size: 2rem; margin-bottom: 1rem; }
 
-        /* REPRODUÇÃO */
+        /* --- 3. REPRODUÇÃO --- */
         .repro-box { background: #1a1e1a; padding: 2.5rem; border-radius: 20px; border: 1px solid var(--primary-green); }
         .step { margin-bottom: 25px; padding-left: 20px; border-left: 3px solid var(--accent-gold); }
-        .step strong { color: var(--primary-green); display: block; font-size: 1.2rem; margin-bottom: 5px; }
+        .step strong { color: var(--primary-green); display: block; font-size: 1.2rem; }
 
-        /* ETAPAS POR ESPÉCIE */
-        .stage { display: flex; align-items: center; gap: 50px; margin-bottom: 6rem; background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 30px; }
+        /* --- 4. ETAPAS POR ESPÉCIE --- */
+        .stage { 
+            display: flex; 
+            align-items: center; 
+            gap: 50px; 
+            margin-bottom: 6rem; 
+            background: rgba(255,255,255,0.02); 
+            padding: 2.5rem; 
+            border-radius: 30px; 
+        }
         .stage.reverse { flex-direction: row-reverse; }
-        .stage-text { flex: 1; }
-        .stage-img { flex: 1; }
-        .stage-img img { width: 100%; height: 400px; object-fit: cover; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.6); border: 2px solid var(--primary-green); }
+        .stage-text { flex: 1.2; }
+        .stage-img { flex: 0.8; }
+        .stage-img img { 
+            width: 100%; 
+            height: 400px; 
+            object-fit: cover; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6); 
+            border: 2px solid var(--primary-green); 
+        }
 
-        /* CURIOSIDADES */
+        /* --- 5. CURIOSIDADES --- */
         .curiosity-panel { background: linear-gradient(135deg, #1e2e1e, #0d0f0d); padding: 3rem; border-radius: 20px; }
-        .curiosity-item { margin-bottom: 1.5rem; display: flex; gap: 15px; align-items: flex-start; }
-        .curiosity-item i { color: var(--accent-gold); font-size: 1.2rem; }
+        .curiosity-item { margin-bottom: 1.5rem; display: flex; gap: 15px; }
+        .curiosity-item i { color: var(--accent-gold); margin-top: 5px; }
 
-        /* RESUMO FINAL */
-        .summary-section { background: var(--primary-green); color: white; padding: 3rem; border-radius: 20px; margin-top: 4rem; }
+        /* --- 6. RESUMO FINAL --- */
+        .summary-section { background: var(--primary-green); color: white; padding: 3rem; border-radius: 20px; }
         .summary-section h2 { border-left-color: var(--accent-gold); color: white; }
-        .summary-section ul { list-style: none; }
         .summary-section li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
 
         footer { background: var(--card-bg); padding: 4rem; text-align: center; border-top: 4px solid var(--primary-green); }
+
+        /* =============================================
+           AJUSTE PARA CELULAR (RESPONSIVIDADE)
+           ============================================= */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            
+            .stage {
+                flex-direction: column !important; /* Empilha texto e imagem */
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .stage.reverse {
+                flex-direction: column-reverse !important; /* Imagem sempre em cima */
+            }
+
+            .stage-img {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .stage-img img {
+                height: 300px; /* Reduz altura no celular */
+            }
+
+            h2 { font-size: 1.8rem; }
+            .grid-cards { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="wind-container">
-            <div class="pollen" style="top: 30%; animation-delay: 0s;"></div>
-            <div class="pollen" style="top: 60%; animation-delay: 2s;"></div>
+            <div class="pollen" style="top: 20%; animation-delay: 0s;"></div>
+            <div class="pollen" style="top: 50%; animation-delay: 2s;"></div>
             <div class="pollen" style="top: 80%; animation-delay: 4s;"></div>
         </div>
-        <h1>Gimnospermas</h1>
+        <h1>GimnoEduca</h1>
     </header>
 
     <div class="container">
@@ -89,28 +151,28 @@
         <section id="visao-geral">
             <h2>Visão Geral</h2>
             <div class="vision-box">
-                <p>As <strong>Gimnospermas</strong> representam um dos quatro grandes grupos de plantas do reino <em>Plantae</em>. Elas são caracterizadas por serem plantas vasculares, mas com uma particularidade única: suas sementes não são protegidas por um fruto.</p>
-                <p>A etimologia da palavra vem do grego <strong>gymnos</strong> (nu) e <strong>sperma</strong> (semente). Evolutivamente, elas surgiram há cerca de 360 milhões de anos, permitindo que as plantas deixassem de depender de ambientes extremamente úmidos.</p>
+                <p>As <strong>Gimnospermas</strong> são plantas vasculares que produzem sementes, mas não possuem frutos. O nome vem do grego <em>Gymnos</em> (nu) e <em>Sperma</em> (semente).</p>
+                <p>Surgiram há cerca de 360 milhões de anos e foram os primeiros vegetais a conquistar definitivamente o ambiente terrestre, graças à independência da água para a reprodução.</p>
             </div>
         </section>
 
         <section id="caracteristicas">
-            <h2>Principais Características</h2>
+            <h2>Características Principais</h2>
             <div class="grid-cards">
                 <div class="feature-card">
-                    <i class="fas fa-tree"></i>
-                    <h3>Organização</h3>
-                    <p>Possuem raízes, caule e folhas verdadeiras. São plantas de grande porte, podendo atingir dezenas de metros.</p>
-                </div>
-                <div class="feature-card">
                     <i class="fas fa-microscope"></i>
-                    <h3>Sistema Vascular</h3>
-                    <p>Contam com tecidos condutores especializados (xilema e floema), garantindo transporte eficiente de nutrientes.</p>
+                    <h3>Vasculares</h3>
+                    <p>Possuem tecidos condutores (xilema e floema) para transportar seiva por todo o corpo da planta.</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-tint-slash"></i>
-                    <h3>Independência Hídrica</h3>
-                    <p>Diferente de musgos e samambaias, não dependem da água para que o gameta masculino encontre o feminino.</p>
+                    <h3>Independência</h3>
+                    <p>Não precisam de água para a fecundação, utilizando o grão de pólen e o tubo polínico.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-wind"></i>
+                    <h3>Anemofilia</h3>
+                    <p>A polinização ocorre principalmente através do vento, que carrega o pólen entre os estróbilos.</p>
                 </div>
             </div>
         </section>
@@ -119,52 +181,42 @@
             <h2>Ciclo de Reprodução</h2>
             <div class="repro-box">
                 <div class="step">
-                    <strong>Etapa 1: Polinização</strong>
-                    <p>O grão de pólen (gametófito masculino) é levado pelo vento (anemofilia) até o estróbilo feminino (pinha).</p>
+                    <strong>1. Grão de Pólen</strong>
+                    <p>Produzido nos estróbilos masculinos, é levado pelo vento até o estróbilo feminino.</p>
                 </div>
                 <div class="step">
-                    <strong>Etapa 2: Tubo Polínico</strong>
-                    <p>Ao atingir o óvulo, o pólen forma o tubo polínico, que transporta o núcleo espermático até a oosfera (gameta feminino).</p>
+                    <strong>2. Tubo Polínico</strong>
+                    <p>Ao germinar, o pólen cria um tubo que leva o gameta masculino diretamente ao óvulo.</p>
                 </div>
                 <div class="step">
-                    <strong>Etapa 3: Formação da Semente</strong>
-                    <p>Após a fecundação, forma-se o embrião, que fica protegido dentro da semente, fornecendo nutrientes e proteção contra a dessecação.</p>
+                    <strong>3. Semente (Pinhão)</strong>
+                    <p>A união dos gametas forma o embrião dentro de uma semente, que contém reservas de nutrientes.</p>
                 </div>
             </div>
         </section>
 
         <section id="especies">
-            <h2>Espécies por Etapas</h2>
+            <h2>Espécies em Destaque</h2>
 
             <div class="stage">
                 <div class="stage-text">
-                    <h3>1. Araucária <br><span style="color:var(--primary-green); font-size: 1.2rem;">(Pinheiro-do-Paraná)</span></h3>
-                    <p>Nativa do Brasil, é a espécie símbolo da região Sul. Suas folhas são resistentes (aciculifoliadas) e sua semente, o pinhão, é amplamente consumida.</p>
-                    <p>É uma planta dioica, o que significa que as estruturas masculinas e femininas ficam em árvores separadas.</p>
+                    <h3>1. Araucária</h3>
+                    <p style="color:var(--primary-green); font-weight: bold;">(Pinheiro-do-Paraná)</p>
+                    <p>Espécie nativa do Brasil, símbolo do Sul. Suas folhas são em forma de agulha grossa e sua semente é o pinhão. É uma planta dioica (sexos separados).</p>
                 </div>
                 <div class="stage-img">
-                    <img src="https://i.ibb.co/qLMsTR4c/araucaria.webp">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Araucaria_angustifolia_2.jpg/600px-Araucaria_angustifolia_2.jpg" alt="Araucária">
                 </div>
             </div>
 
             <div class="stage reverse">
                 <div class="stage-text">
-                    <h3>2. Pinus <br><span style="color:var(--primary-green); font-size: 1.2rem;">(Coníferas Comuns)</span></h3>
-                    <p>O grupo mais abundante mundialmente. São essenciais para a indústria de madeira, papel e resina.</p>
-                    <p>Suas pinhas (estróbilos) são as estruturas reprodutivas clássicas que vemos em filmes e decorações, sendo mestres na polinização pelo vento.</p>
+                    <h3>2. Pinus e Sequoias</h3>
+                    <p style="color:var(--primary-green); font-weight: bold;">(Coníferas Gigantes)</p>
+                    <p>O Pinus é essencial para a indústria de madeira. Já as Sequoias são os maiores seres vivos da Terra, podendo viver mais de 3.000 anos e passar dos 90 metros de altura.</p>
                 </div>
                 <div class="stage-img">
-                    <img src="https://i.ibb.co/mjtgpTf/pinus.webp">
-                </div>
-            </div>
-
-            <div class="stage">
-                <div class="stage-text">
-                    <h3>3. Ginkgo Biloba <br><span style="color:var(--primary-green); font-size: 1.2rem;">(O Fóssil Vivo)</span></h3>
-                    <p>Única no seu grupo, possui folhas em formato de leque. Sobreviveu a grandes extinções e é considerada uma planta sagrada e medicinal em diversas culturas orientais.</p>
-                </div>
-                <div class="stage-img">
-                    <img src="https://i.ibb.co/YFtdMH1v/Ginkgo-Biloba.webp">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=600" alt="Sequoia">
                 </div>
             </div>
         </section>
@@ -173,35 +225,30 @@
             <h2>Painel de Curiosidades</h2>
             <div class="curiosity-panel">
                 <div class="curiosity-item">
-                    <i class="fas fa-award"></i>
-                    <p>As <strong>Sequoias Gigantes</strong> são as maiores árvores do mundo, podendo atingir mais de 100 metros.</p>
+                    <i class="fas fa-leaf"></i>
+                    <p><strong>Fóssil Vivo:</strong> A Ginkgo Biloba é a única de sua espécie que sobreviveu à época dos dinossauros.</p>
                 </div>
                 <div class="curiosity-item">
-                    <i class="fas fa-hourglass-half"></i>
-                    <p>O <strong>Pinheiro de Bristlecone</strong> pode viver mais de 5.000 anos, sendo um dos seres vivos mais antigos do planeta.</p>
-                </div>
-                <div class="curiosity-item">
-                    <i class="fas fa-dna"></i>
-                    <p>Elas foram o primeiro grupo de plantas a desenvolver sementes e grãos de pólen na história da Terra.</p>
+                    <i class="fas fa-fire"></i>
+                    <p><strong>Fogo:</strong> Algumas sementes de coníferas só germinam após o calor de um incêndio florestal.</p>
                 </div>
             </div>
         </section>
 
-        <section id="resumo" class="summary-section">
-            <h2>Resumo do Conhecimento</h2>
+        <section class="summary-section">
+            <h2>Resumo Geral</h2>
             <ul>
-                <li><i class="fas fa-check-circle"></i> <strong>Semente Nua:</strong> Não possuem frutos protegendo as sementes.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Pólen:</strong> Gameta masculino transportado pelo vento.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Estróbilos:</strong> Popularmente chamados de pinhas.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Habitat:</strong> Preferencialmente climas frios e temperados.</li>
+                <li><i class="fas fa-check"></i> Sementes Nuas (Sem frutos)</li>
+                <li><i class="fas fa-check"></i> Presença de Tubo Polínico</li>
+                <li><i class="fas fa-check"></i> Vasos Condutores Presentes</li>
+                <li><i class="fas fa-check"></i> Grande importância econômica (Madeira)</li>
             </ul>
-            <p style="margin-top: 20px; font-style: italic;">As gimnospermas mudaram o mundo ao criar sementes, permitindo a vida longe da água abundante.</p>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 - Projeto Escolar de Biologia | Desenvolvido com foco em Botânica</p>
+        <p>&copy; 2026 - Trabalho de Biologia | Guia de Gimnospermas</p>
     </footer>
 
 </body>
